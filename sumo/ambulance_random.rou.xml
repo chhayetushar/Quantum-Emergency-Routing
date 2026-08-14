@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes>
+
+    <vType id="ambulance"
+           vClass="emergency"
+           color="1,0,0"
+           maxSpeed="33.33"
+           accel="3.0"
+           decel="6.0"/>
+
+    <trip id="amb1"
+          type="ambulance"
+          depart="0"
+          from="838088480"
+          to="456764227"/>
+
+</routes>
