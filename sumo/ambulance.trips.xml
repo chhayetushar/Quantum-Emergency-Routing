@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<routes>
+
+    <vType id="ambulance"
+           vClass="emergency"
+           color="1,0,0"
+           maxSpeed="33.33"
+           accel="3.0"
+           decel="6.0"/>
+
+    <vehicle id="amb1"
+             type="ambulance"
+             depart="0">
+
+        <route edges="838088480 ... ... ... 456764227"/>
+
+    </vehicle>
+
+</routes>

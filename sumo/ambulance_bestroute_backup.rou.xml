@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on 2026-08-10T16:04:40.281121+05:30 by Eclipse SUMO duarouter 1.27.1
+<duarouterConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
+
+    <input>
+        <net-file value="citymap_v3.net.xml"/>
+        <route-files value="ambulance.rou.xml"/>
+    </input>
+
+    <output>
+        <output-file value="ambulance_bestroute.rou.xml"/>
+    </output>
+
+</duarouterConfiguration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    <vType id="ambulance" maxSpeed="33.33" vClass="emergency" color="red" accel="3.0" decel="6.0"/>
+    <vehicle id="amb1" type="ambulance" depart="0.00">
+        <route edges="838088480 838064986#1 174253295#23 174253295#24 174253295#25 61974306#3 430982963#3 430982963#4 430982963#5 430982963#6 430982963#7 430982963#0 430982963#1 112601786#0 112601786#1 112601786#2 -406721668#2 -406721668#1 456764218#1 456764218#3 -456764227 456764227"/>
+    </vehicle>
+</routes>
