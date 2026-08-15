@@ -1,12 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
+<?xml version='1.0' encoding='UTF-8'?>
 <configuration>
     <input>
-        <net-file value="citymap_v3.net.xml"/>
-<route-files value="congested_test.rou.xml"/>
+        <net-file value="citymap_v3.net.xml" />
+        <route-files value="congested_test.rou.xml" />
+            <gui-settings-file value="raster_vehicles.view.xml" />
     </input>
-
-<output>
-    <tripinfo-output value="congested_test.tripinfo.xml"/>
-</output>
+    <output>
+        <tripinfo-output value="congested_test.tripinfo.xml" />
+    </output>
+    <time>
+        <begin value="0" />
+        <end value="4200" />
+        <step-length value="1.0" />
+    </time>
 </configuration>

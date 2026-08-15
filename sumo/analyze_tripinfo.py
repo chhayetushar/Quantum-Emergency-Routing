@@ -1,29 +1,38 @@
 import xml.etree.ElementTree as ET
+from collections import Counter
 
-# Load SUMO trip information
-tree = ET.parse("congested_test.tripinfo.xml")
-root = tree.getroot()
+FILE = "congested_test.tripinfo.xml"
+try:
+    root = ET.parse(FILE).getroot()
+except (FileNotFoundError, ET.ParseError) as e:
+    print(f"Could not read {FILE}: {e}")
+    raise SystemExit(1)
 
-total_vehicles = 0
-total_duration = 0
-total_waiting = 0
-total_time_loss = 0
+trips = root.findall("tripinfo")
+if not trips:
+    print("No completed trips found yet. Run SUMO first and then run this script.")
+    raise SystemExit(0)
 
-for trip in root.findall("tripinfo"):
-    total_vehicles += 1
-    total_duration += float(trip.get("duration", 0))
-    total_waiting += float(trip.get("waitingTime", 0))
-    total_time_loss += float(trip.get("timeLoss", 0))
+def f(a):
+    try: return float(a)
+    except: return 0.0
 
-if total_vehicles > 0:
-    average_duration = total_duration / total_vehicles
-    average_waiting = total_waiting / total_vehicles
-    average_time_loss = total_time_loss / total_vehicles
+travel = sum(f(x.get('duration')) for x in trips)
+waiting = sum(f(x.get('waitingTime')) for x in trips)
+loss = sum(f(x.get('timeLoss')) for x in trips)
+counts = Counter()
+for x in trips:
+    vid=x.get('id','')
+    for t in ('car','motorcycle','taxi','bus','ambulance','police','firetruck'):
+        if vid.startswith(t+'_'):
+            counts[t]+=1
+            break
 
-    print("===== SUMO CONGESTION RESULTS =====")
-    print(f"Total vehicles     : {total_vehicles}")
-    print(f"Average travel time: {average_duration:.2f} seconds")
-    print(f"Average waiting    : {average_waiting:.2f} seconds")
-    print(f"Average time loss  : {average_time_loss:.2f} seconds")
-else:
-    print("No trip information found.")
+print("===== SUMO TRAFFIC RESULTS =====")
+print(f"Completed vehicles  : {len(trips)}")
+print(f"Average travel time : {travel/len(trips):.2f} seconds")
+print(f"Average waiting     : {waiting/len(trips):.2f} seconds")
+print(f"Average time loss   : {loss/len(trips):.2f} seconds")
+print("\nVehicle types in completed trips:")
+for t in ('car','motorcycle','taxi','bus','ambulance','police','firetruck'):
+    print(f"{t:12s}: {counts[t]}")
