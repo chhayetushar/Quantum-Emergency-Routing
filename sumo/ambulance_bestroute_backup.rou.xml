@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <!-- The ambulance type is defined once in congested_test.rou.xml -->
+    <vehicle id="amb1"
+             type="ambulance"
+             depart="0"
+             departLane="best"
+             departSpeed="max">
+        <!-- Valid connected path from source 838088480 to destination 456764227 -->
+        <route edges="838088480 838064986#1 174253295#23 174253295#24 174253295#25 61974306#3 430982963#3 430982963#4 430982963#5 430982963#6 430982963#7 430982963#0 430982963#1 112601786#0 112601786#1 112601786#2 -406721668#2 -406721668#1 456764218#1 456764218#3 -456764227 456764227"/>
+    </vehicle>
+</routes>

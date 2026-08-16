@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <vType id="ambulance"
+           vClass="emergency"
+           accel="3.5"
+           decel="6.0"
+           sigma="0.10"
+           length="5.5"
+           minGap="2.0"
+           maxSpeed="30"
+           speedFactor="1.10"
+           color="1,1,1"
+           guiShape="emergency"
+           imgFile="vehicle_images/ambulance.png"/>
+
+    <!-- Ambulance source edge: 838088480 -->
+    <!-- Ambulance destination edge: 456764227 -->
+    <trip id="amb1"
+          type="ambulance"
+          depart="0"
+          departLane="best"
+          departSpeed="max"
+          from="838088480"
+          to="456764227"/>
+</routes>
