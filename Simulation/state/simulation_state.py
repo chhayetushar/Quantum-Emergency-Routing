@@ -4,7 +4,7 @@ from typing import Dict
 from .vehicle_state import VehicleState
 from .road_state import RoadState
 from .emergency_state import EmergencyState
-
+from .emergency_vehicle_state import EmergencyVehicleState
 
 @dataclass
 class SimulationState:
@@ -13,7 +13,9 @@ class SimulationState:
     vehicles: Dict[str, VehicleState] = field(default_factory=dict)
     roads: Dict[str, RoadState] = field(default_factory=dict)
     emergencies: Dict[str, EmergencyState] = field(default_factory=dict)
-## Temporarily for testing purposes, we can create an instance of SimulationState and print it to verify the implementation.
+    emergency_vehicles: Dict[str, EmergencyVehicleState] = field(default_factory=dict)
+    #emergency_vehicles: Dict[str, EmergencyVehicleState] = field(default_factory=dict)
+   # Temporarily for testing purposes, we can create an instance of SimulationState and print it to verify the implementation.
 if __name__ == "__main__":
     state = SimulationState()
 
