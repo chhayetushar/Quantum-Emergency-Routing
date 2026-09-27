@@ -160,13 +160,8 @@ class EmergencyVehicleManager:
         vehicle.position = position
 
         return vehicle
-    def synchronize_with_sumo(self) -> list[str]:
-        """
-        Synchronize active emergency vehicles from SUMO.
 
-        Returns:
-            List of emergency vehicle IDs currently active in SUMO.
-        """
+    def synchronize_with_sumo(self) -> list[str]:
 
         emergency_vehicle_ids = []
 
