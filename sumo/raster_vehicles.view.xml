@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<viewsettings>
+    <scheme name="custom">
+        <background backgroundColor="34,139,34" showGrid="0" gridXSize="100" gridYSize="100" />
+        <vehicles vehicleQuality="3" vehicleMode="0" showBlinker="0" drawMinGap="0" drawBrakeGap="0" showBTRange="0" showRouteIndex="0" scaleLength="1" vehicle_minSize="0.5" vehicle_exaggeration="1.0" vehicle_constantSize="0" vehicle_constantSizeSelected="0" />
+    </scheme>
+    <delay value="100"/>
+</viewsettings>
